@@ -1,17 +1,26 @@
 # glicko2tr
-Converts Glicko-2 elo and RD to TETR.IO's TR.
+Python 3 script that converts Glicko-2 elo and RD to TETR.IO's TR.
 
 ## What it does
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis elit at arcu placerat ullamcorper. Nulla gravida vestibulum magna, quis suscipit eros posuere sit amet. Suspendisse sit amet commodo mi. Cras nec ultricies tellus. Duis volutpat condimentum lectus sed mattis. Nam nec ullamcorper neque. Donec vel elit enim. Etiam auctor augue justo, in finibus velit tempor ac. Nulla fermentum sit amet mi at varius. Vivamus quis ipsum vel massa ullamcorper vestibulum. Nullam in dignissim tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque placerat neque nec turpis convallis venenatis. Ut at erat vel ante tincidunt commodo.
+This is a Python 3 script that converts Glicko-2's elo and RD (and optionally your win count) into TETR.IO's TR used in Tetra League.
 
-Pellentesque accumsan, nisl id venenatis ullamcorper, nisl libero sagittis massa, eu imperdiet urna augue eget odio. In a leo sed justo malesuada fermentum non id risus. Sed euismod porttitor ipsum, in mollis arcu interdum quis. Nullam viverra, nunc ac imperdiet facilisis, erat enim finibus nisi, a faucibus arcu enim non nibh. Nunc iaculis lectus ac tortor maximus sodales. Nunc eu mi eleifend, ullamcorper mi nec, congue enim. Ut tempor diam quis placerat sodales. Phasellus aliquet in nulla eget condimentum. Proin gravida, nulla vel dignissim facilisis, leo mi lobortis elit, ut aliquet augue odio sed leo. Phasellus iaculis dolor ut justo efficitur ultrices. Fusce finibus vulputate velit, sed mollis nibh feugiat a. Donec cursus ex tellus, ut dictum lacus molestie eu. Pellentesque ut pretium turpis, vel dictum odio.
+Similar to TETR.IO, this script will round your TR to the nearest whole number.
 
-Morbi velit libero, molestie non neque eget, malesuada elementum ante. Proin sed erat aliquet, accumsan massa id, suscipit orci. Vestibulum a sollicitudin tellus. Donec elementum, quam vel interdum vestibulum, nibh risus tempus turpis, at volutpat diam leo in nunc. Vivamus in neque erat. Sed leo quam, sollicitudin vitae purus ut, ultrices tincidunt eros. Proin faucibus mattis tellus eget condimentum. Proin leo arcu, posuere vitae dapibus ac, porta sit amet diam. Nam sed auctor elit. Maecenas blandit semper facilisis. Proin suscipit tristique orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-
+This script is useful for players trying to determine their true TR after experiencing an increase in RD.
 ## Usage
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis elit at arcu placerat ullamcorper. Nulla gravida vestibulum magna, quis suscipit eros posuere sit amet. Suspendisse sit amet commodo mi. Cras nec ultricies tellus. Duis volutpat condimentum lectus sed mattis. Nam nec ullamcorper neque. Donec vel elit enim. Etiam auctor augue justo, in finibus velit tempor ac. Nulla fermentum sit amet mi at varius. Vivamus quis ipsum vel massa ullamcorper vestibulum. Nullam in dignissim tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque placerat neque nec turpis convallis venenatis. Ut at erat vel ante tincidunt commodo.
-
-Pellentesque accumsan, nisl id venenatis ullamcorper, nisl libero sagittis massa, eu imperdiet urna augue eget odio. In a leo sed justo malesuada fermentum non id risus. Sed euismod porttitor ipsum, in mollis arcu interdum quis. Nullam viverra, nunc ac imperdiet facilisis, erat enim finibus nisi, a faucibus arcu enim non nibh. Nunc iaculis lectus ac tortor maximus sodales. Nunc eu mi eleifend, ullamcorper mi nec, congue enim. Ut tempor diam quis placerat sodales. Phasellus aliquet in nulla eget condimentum. Proin gravida, nulla vel dignissim facilisis, leo mi lobortis elit, ut aliquet augue odio sed leo. Phasellus iaculis dolor ut justo efficitur ultrices. Fusce finibus vulputate velit, sed mollis nibh feugiat a. Donec cursus ex tellus, ut dictum lacus molestie eu. Pellentesque ut pretium turpis, vel dictum odio. 
+Run from the command line.
+```
+python glicko2tr.py <glicko> <rd> <wins>
+```
+If you are running macOS or Linux, you may have to run this instead:
+```
+python3 ./glicko2tr.py <glicko> <rd> <wins>
+```
+`<glicko>` refers to a players Glicko-2 elo.
+`<rd>` refers to a players Glicko-2 RD.
+`<wins>` refers to a players wincount. **Note:** This is optional, and in fact not necessary for most people as a player's win count does not affect your TR if you have at least 18 wins in Tetra League.
+## Known issues
+Inputting low values for glicko-2 does appear to give incorrect results. I don't know why this is the case, nor do I really care to fix it.
 ## Thanks
-Thanks to osk for the TR formula ([shamelessly stolen here](https://discord.com/channels/673303546107658242/1260605501754839060/1356615088509026466))
+Thanks to osk for the TR formula ([shamelessly stolen here](https://discord.com/channels/673303546107658242/1260605501754839060/1356615088509026466)).
 
